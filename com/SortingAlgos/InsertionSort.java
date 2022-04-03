@@ -13,11 +13,12 @@ public class InsertionSort  {
                 while (k >-1 && key< Arr.get(k)){
                     Arr.set(k+1,Arr.get(k));
                     k--;
+                    System.out.println("During Sorting: "+ Arr);
                 }
                 Arr.set(k+1, key);
                 //System.out.println(i+1);
                 i++;
-
+                System.out.println("During Sorting: "+ Arr);
             }
 
         }
