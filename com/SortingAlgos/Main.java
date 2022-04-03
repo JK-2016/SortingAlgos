@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static com.SortingAlgos.InsertionSort.insertion_Sort;
+import static com.SortingAlgos.MergeSort.mergeSort;
 import static com.SortingAlgos.QuickSort.quickSort;
 
 public class Main {
@@ -16,7 +17,8 @@ public class Main {
         ArrayList <Integer> inArray = new ArrayList<Integer>(List.of(2,4,3,6));
         System.out.println("Before Sorting: "+ inArray);
         //insertion_Sort(inArray);
-        quickSort(inArray);
+        //quickSort(inArray);
+        mergeSort(inArray);
         System.out.println("After Sorting: "+ inArray);
 
     }
