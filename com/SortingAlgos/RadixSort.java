@@ -2,6 +2,7 @@ package com.SortingAlgos;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 public class RadixSort {
     public static int findMax(ArrayList<Integer> Arr){
@@ -28,7 +29,8 @@ public class RadixSort {
     public static void countSort(ArrayList<Integer> Arr, int exp){
         int count[] = new int[10],i=0;
         int size = Arr.size();
-        ArrayList<Integer> output = Arrays.asList(new Integer[size]);
+        ArrayList<Integer> output = new ArrayList<Integer>(Arr);
+                //Collections.nCopies(size, 0));
         Arrays.fill(count,0);
         for(i =0; i<size;i++){
             count[(Arr.get(i)/exp)%10]++;
@@ -39,11 +41,11 @@ public class RadixSort {
         }
         //Build output
         for(i=size-1;i>=0;i--){
-            int pos = count[(Arr.get(i)/exp)%10]-1;
-            output.set(pos,Arr.get(i));
-            count[(Arr.get(i)/exp)%10]--;
+            int pos = count[(output.get(i)/exp)%10]-1;
+            Arr.set(pos,output.get(i));
+            count[(output.get(i)/exp)%10]--;
         }
-        Arr = output;
+        //return output;
     }
 
 }
